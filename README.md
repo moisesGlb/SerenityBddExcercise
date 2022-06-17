@@ -35,6 +35,10 @@ $ mvn clean verify -Dtag@homePage
 
 ## Screenshots
 
+![Screenshot](https://raw.githubusercontent.com/moisesGlb/SerenityBddExcercise/main/screenshots/serenityReport1.png)
+
+![Screenshot](https://raw.githubusercontent.com/moisesGlb/SerenityBddExcercise/main/screenshots/serenityReport2.png)
+
 
 
 ## Links
