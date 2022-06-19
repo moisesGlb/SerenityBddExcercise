@@ -28,7 +28,7 @@ public class ProductPage extends PageObject {
     private List<WebElementFacade> priceElements;
 
     public void getProductPage(){
-        getDriver().get(GlobalConfig.HOME_PAGE_URL);
+        getDriver().get(GlobalConfig.PRODUCT_PAGE_URL);
     }
     public String getProductTitle() {
         waitFor(ExpectedConditions.visibilityOf(productTitle));

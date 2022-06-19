@@ -7,6 +7,7 @@ import io.cucumber.java.en.When;
 import org.fluentlenium.core.annotation.Page;
 import pages.ProductPage;
 import pages.LoginPage;
+import resources.GlobalConfig;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -44,7 +45,7 @@ public class MyStepdefs {
 
     @Then("the home page is displayed")
     public void theHomePageIsDisplayed() {
-        assertThat(productPage.getProductTitle().equals("PRODUCTS"));
+        assertThat(productPage.getProductTitle().equals(GlobalConfig.PRODUCT_PAGE_TITLE));
     }
 
     @And("the error message contains the text {string}")
