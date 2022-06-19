@@ -21,5 +21,12 @@ Feature: Home Page Feature
     And the customer select the sort order high to low
     Then the products are sorted by prices high to low
 
+    @test3
+   Scenario: User try to navigate to home page using the url without login
+      Given a customer navigates to the ProductPages of swaglabs
+      Then the login page is displayed
+      And the error message should be dispayed
+      And the error message contains the text "Epic sadface: You can only access '/inventory.html' when you are logged in."
+
 
 

@@ -1,4 +1,4 @@
-# Serenity Test excercise
+# Serenity Test Excercise
 
 ## Description
 

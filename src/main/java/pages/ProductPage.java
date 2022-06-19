@@ -4,12 +4,13 @@ import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import resources.GlobalConfig;
 import resources.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomePage extends PageObject {
+public class ProductPage extends PageObject {
 
     @FindBy(xpath = "//span[@class='title']")
     private WebElementFacade productTitle;
@@ -26,6 +27,9 @@ public class HomePage extends PageObject {
     @FindBy(xpath = "//div[@class='inventory_item_price']")
     private List<WebElementFacade> priceElements;
 
+    public void getProductPage(){
+        getDriver().get(GlobalConfig.HOME_PAGE_URL);
+    }
     public String getProductTitle() {
         waitFor(ExpectedConditions.visibilityOf(productTitle));
         return productTitle.getText();

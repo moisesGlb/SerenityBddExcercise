@@ -61,4 +61,9 @@ public class LoginPage extends PageObject {
         return errorMessage.isVisible();
     }
 
+    public boolean loginPageDisplayed(){
+        waitFor(ExpectedConditions.visibilityOf(loginBtn));
+        return loginBtn.isVisible();
+    }
+
 }

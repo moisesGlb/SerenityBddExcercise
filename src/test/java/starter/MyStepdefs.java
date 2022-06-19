@@ -5,7 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.fluentlenium.core.annotation.Page;
-import pages.HomePage;
+import pages.ProductPage;
 import pages.LoginPage;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -15,7 +15,7 @@ public class MyStepdefs {
     @Page
     LoginPage loginPage;
     @Page
-    HomePage homePage;
+    ProductPage productPage;
 
     @Given("a customer navigates to the home page of swaglabs")
     public void aCustomerNavigatesToTheHomePageOfSwaglabs() {
@@ -44,7 +44,7 @@ public class MyStepdefs {
 
     @Then("the home page is displayed")
     public void theHomePageIsDisplayed() {
-        assertThat(homePage.getProductTitle().equals("PRODUCTS"));
+        assertThat(productPage.getProductTitle().equals("PRODUCTS"));
     }
 
     @And("the error message contains the text {string}")
@@ -64,21 +64,31 @@ public class MyStepdefs {
 
     @When("the customer select the sort order low to high")
     public void theCustomerSelectTheSortOrderLowToHigh() {
-        homePage.sortOrderLow2High();
+        productPage.sortOrderLow2High();
     }
 
     @Then("the products are sorted by prices low to high")
     public void theProductsAreSortedByPrices() {
-        assertThat(homePage.checkSortAscending()).isTrue();
+        assertThat(productPage.checkSortAscending()).isTrue();
     }
 
     @And("the customer select the sort order high to low")
     public void theCustomerSelectTheSortOrderHighToLow() {
-        homePage.sortOrderHigh2Low();
+        productPage.sortOrderHigh2Low();
     }
 
     @Then("the products are sorted by prices high to low")
     public void theProductsAreSortedByPricesHighToLow() {
-        assertThat(homePage.checkSortDescending()).isTrue();
+        assertThat(productPage.checkSortDescending()).isTrue();
+    }
+
+    @Given("a customer navigates to the ProductPages of swaglabs")
+    public void aCustomerNavigatesToTheProductPagesOfSwaglabs() {
+        productPage.getProductPage();
+    }
+
+    @Then("the login page is displayed")
+    public void theLoginPageIsDisplayed() {
+        loginPage.loginPageDisplayed();
     }
 }
